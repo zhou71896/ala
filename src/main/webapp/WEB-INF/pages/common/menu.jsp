@@ -26,6 +26,9 @@
 		            <li opCode="0103">
 		                <a tabindex="-1" href="javascript:goPage('admin/oper/mainPage')"> <span class="mm-text">操作管理</span></a>
 		            </li>
+					<li opCode="0103">
+						<a tabindex="-1" href="javascript:goPage('admin/message/mainPage')"> <span class="mm-text">消息管理</span></a>
+					</li>
 		        </ul>
 		    </li>
 		    <li class="mm-dropdown" opCode="02">
@@ -40,13 +43,37 @@
 		        </ul>
 		    </li>
 		    <li class="mm-dropdown" opCode="03">
-		        <a href="#"><i class="menu-icon fa fa-credit-card"></i><span class="mm-text">系统管理</span></a>
+		        <a href="#"><i class="menu-icon fa fa-user"></i><span class="mm-text">用户管理</span></a>
 		        <ul>
 		            <li opCode="0301">
 		                <a tabindex="-1" href="javascript:goPage('admin/log/mainPage')"><span class="mm-text">用户日志</span></a>
 		            </li>
 		        </ul>
 		    </li>
+			<li class="mm-dropdown" opCode="04">
+				<a href="#"><i class="menu-icon fa fa-globe"></i><span class="mm-text">公司管理</span></a>
+				<ul>
+					<li opCode="0301">
+						<a tabindex="-1" href="javascript:goPage('admin/log/mainPage')"><span class="mm-text">用户日志</span></a>
+					</li>
+				</ul>
+			</li>
+			<li class="mm-dropdown" opCode="05">
+				<a href="#"><i class="menu-icon fa fa-comments"></i><span class="mm-text">广告管理</span></a>
+				<ul>
+					<li opCode="0301">
+						<a tabindex="-1" href="javascript:goPage('admin/log/mainPage')"><span class="mm-text">用户日志</span></a>
+					</li>
+				</ul>
+			</li>
+			<li class="mm-dropdown" opCode="06">
+				<a href="#"><i class="menu-icon fa fa-tasks"></i><span class="mm-text">任务管理</span></a>
+				<ul>
+					<li opCode="0301">
+						<a tabindex="-1" href="javascript:goPage('admin/log/mainPage')"><span class="mm-text">用户日志</span></a>
+					</li>
+				</ul>
+			</li>
 		</ul>
 	</div>
 </div>
