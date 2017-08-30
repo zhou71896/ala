@@ -810,6 +810,7 @@ DROP TABLE IF EXISTS `task`;
 
 CREATE TABLE `task` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id`int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL COMMENT '????',
   `type` tinyint(4) NOT NULL COMMENT '????',
   `address` varchar(255) DEFAULT NULL COMMENT '??',
@@ -818,7 +819,7 @@ CREATE TABLE `task` (
   `product_id` bigint(11) NOT NULL COMMENT '??id',
   `description` varchar(255) DEFAULT NULL COMMENT '????',
   `good_at` text COMMENT '?????',
-  `??` float DEFAULT NULL COMMENT '??',
+  `price` float DEFAULT NULL COMMENT '??',
   `oper_date` datetime NOT NULL COMMENT '????',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='?????';
