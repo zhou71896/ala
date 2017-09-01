@@ -20,8 +20,8 @@ public class CompanyEntity {
     private String goodAt;
     private Double score;
     private Integer status;
-    private Timestamp updateDate;
-    private Timestamp createDate;
+    private String updateDate;
+    private String createDate;
     private Long userId;
 
     @Id
@@ -136,21 +136,21 @@ public class CompanyEntity {
 
     @Basic
     @Column(name = "update_date")
-    public Timestamp getUpdateDate() {
+    public String getUpdateDate() {
         return updateDate;
     }
 
-    public void setUpdateDate(Timestamp updateDate) {
+    public void setUpdateDate(String updateDate) {
         this.updateDate = updateDate;
     }
 
     @Basic
     @Column(name = "create_date")
-    public Timestamp getCreateDate() {
+    public String getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(Timestamp createDate) {
+    public void setCreateDate(String createDate) {
         this.createDate = createDate;
     }
 
