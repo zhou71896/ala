@@ -8,9 +8,9 @@
 	<div class="col-md-2" style="padding-bottom: 0px;width: 200px;">
 		<select class="form-control" name="roleid" onchange="javascript:formSubmit();">
 			<option value="">==所属类型==</option>
-			<c:forEach items="${list}" var="role">
+			<%--<c:forEach items="${list}" var="role">
 				<option value="${role.roleid}">${role.cname}</option>
-			</c:forEach>
+			</c:forEach>--%>
 		</select>
 	</div>
     <div class="col-md-1" style="width: 105px;">

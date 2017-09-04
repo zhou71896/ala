@@ -36,7 +36,8 @@ public class CompanyService extends AbstratService<CompanyEntity>  {
         String result = null;
         CompanyEntity $company = companyMapper.queryByName(company.getName());
         if (null == $company) {
-            company.setCreateDate(DateUtil.getCurDateTime());
+            company.setCreate_date(DateUtil.getCurDateTime());
+            company.setUpdate_date(DateUtil.getCurDateTime());
             save(company);
         } else {
             result = "公司已存在";

@@ -19,7 +19,7 @@
 	</resultMap>
 
 	<insert id="addCompany" useGeneratedKeys="true" keyProperty="id">
-		insert into auth_user(name, type, address, icon,introduce,product_id,description,good_at,score,status,update_date,user_id)
+		insert into company(name, type, address, icon,introduce,product_id,description,good_at,score,status,update_date,user_id)
 		 values(#{name}, #{type}, #{address},#{icon}, #{introduce},#{product_id},#{description},#{good_at},#{score},#{status},now(),#{user_id})
 	</insert>
 

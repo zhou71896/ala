@@ -10,33 +10,33 @@
 	</div>
 	
     <div class="form-group">
-        <label class="col-sm-3 control-label" for="companyname"><font color="red">*</font>公司名称：</label>
+        <label class="col-sm-3 control-label" for="name"><font color="red">*</font>公司名称：</label>
         <div class="col-sm-8">
-            <input class="form-control" type="text" id="companyname" name="companyname" placeholder="请填写公司名称"/>
-            <div id="validation-companyname" class="validate-error help-block"></div>
+            <input class="form-control" type="text" id="name" name="name" placeholder="请填写公司名称"/>
+            <div id="validation-name" class="validate-error help-block"></div>
         </div>
     </div>
     
     <div class="form-group">
         <label class="col-sm-3 control-label" for="address"><font color="red">*</font>公司地址：</label>
         <div class="col-sm-8">
-            <input class="form-control" type="text" id="address" placeholder="请填写公司地址" />
+            <input class="form-control" type="text" id="address" name="address" placeholder="请填写公司地址" />
             <div id="validation-address" class="validate-error help-block"></div>
         </div>
     </div>
     
     <div class="form-group">
-        <label class="col-sm-3 control-label" for="rePass"><font color="red">*</font>公司介绍：</label>
+        <label class="col-sm-3 control-label" for="introduce"><font color="red">*</font>公司介绍：</label>
         <div class="col-sm-8">
-            <input class="form-control" type="text" id="rePass" placeholder="请填写公司介绍" />
+            <input class="form-control" type="text" id="introduce" name="introduce" placeholder="请填写公司介绍" />
             <div id="validation-introduce" class="validate-error help-block"></div>
         </div>
     </div>
     
     <div class="form-group">
-        <label class="col-sm-3 control-label" for="product">公司产品：</label>
+        <label class="col-sm-3 control-label" for="product_id">公司产品：</label>
         <div class="col-sm-8">
-            <input class="form-control" type="text" id="product" name="product" placeholder="请填写公司相关的产品" />
+            <input class="form-control" type="text" id="product_id" name="product_id" placeholder="请填写公司相关的产品" />
         </div>
     </div>
     <div class="form-group">
@@ -76,8 +76,8 @@
 			modalErr("两次密码不一致");
 			return;
 		}
-		password = hex_md5(password);
-		var data = $("#submitForm").serialize() + "&password="+password;*/
+		password = hex_md5(password);*/
+		var data = $("#submitForm").serialize();
 		ajaxRequest("admin/company/add", data);
 	}
 </script>
