@@ -17,7 +17,7 @@
         <button id="searchBtn" class="btn btn-labeled btn-info" onclick="javascript:formSubmit();"><span class="btn-label icon fa fa-search"></span>搜索</button>
     </div>
     <div class="col-md-3" style="text-align: left;padding-bottom: unset">
-        <button id="addBtn" class="btn btn-labeled btn-primary" onclick="javascript:showModal('添加公司', 'admin/user/addPage');"><span class="btn-label icon fa fa-plus"></span>添加用户</button>
+        <button id="addBtn" class="btn btn-labeled btn-primary" onclick="javascript:showModal('添加公司', 'admin/company/addPage');"><span class="btn-label icon fa fa-plus"></span>添加公司</button>
     </div>
   </div>
 </div>
@@ -53,7 +53,7 @@
                 }}
             ],
             cls: "",
-            url: _urlPath + "admin/user/queryPage",
+            url: _urlPath + "admin/company/queryPage",
             sort:"id",
             order:"desc",
             pagination:true,

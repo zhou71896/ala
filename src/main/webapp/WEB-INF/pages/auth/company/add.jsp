@@ -2,48 +2,57 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <form id="submitForm" class="form-horizontal">
     <div class="form-group">
-        <label class="col-sm-3 control-label" for="roleid"><font color="red">*</font>所属角色：</label>
-		<div class="col-sm-8">
-			<select class="form-control span2" id="roleid" name="roleid"">
-				<c:forEach items="${list}" var="role">
-					<option value="${role.roleid}">${role.cname}</option>
-				</c:forEach>
-			</select>
-		</div>
+        <label class="col-sm-3 control-label" for="type"><font color="red">*</font>所属类型：</label>
+        <div class="col-sm-8">
+            <input class="form-control" type="text" id="type" name="type" placeholder="请填写公司类型"/>
+            <div id="validation-type" class="validate-error help-block"></div>
+        </div>
 	</div>
 	
     <div class="form-group">
-        <label class="col-sm-3 control-label" for="username"><font color="red">*</font>用户名称：</label>
+        <label class="col-sm-3 control-label" for="companyname"><font color="red">*</font>公司名称：</label>
         <div class="col-sm-8">
-            <input class="form-control" type="text" id="username" name="username" placeholder="请填写用户名称"/>
-            <div id="validation-username" class="validate-error help-block"></div>
+            <input class="form-control" type="text" id="companyname" name="companyname" placeholder="请填写公司名称"/>
+            <div id="validation-companyname" class="validate-error help-block"></div>
         </div>
     </div>
     
     <div class="form-group">
-        <label class="col-sm-3 control-label" for="password"><font color="red">*</font>登录密码：</label>
+        <label class="col-sm-3 control-label" for="address"><font color="red">*</font>公司地址：</label>
         <div class="col-sm-8">
-            <input class="form-control" type="password" id="password" placeholder="请填写登录密码" />
-            <div id="validation-password" class="validate-error help-block"></div>
+            <input class="form-control" type="text" id="address" placeholder="请填写公司地址" />
+            <div id="validation-address" class="validate-error help-block"></div>
         </div>
     </div>
     
     <div class="form-group">
-        <label class="col-sm-3 control-label" for="rePass"><font color="red">*</font>确认密码：</label>
+        <label class="col-sm-3 control-label" for="rePass"><font color="red">*</font>公司介绍：</label>
         <div class="col-sm-8">
-            <input class="form-control" type="password" id="rePass" placeholder="请填写确认密码" />
-            <div id="validation-password" class="validate-error help-block"></div>
+            <input class="form-control" type="text" id="rePass" placeholder="请填写公司介绍" />
+            <div id="validation-introduce" class="validate-error help-block"></div>
         </div>
     </div>
     
     <div class="form-group">
-        <label class="col-sm-3 control-label" for="email">电子邮箱：</label>
+        <label class="col-sm-3 control-label" for="product">公司产品：</label>
         <div class="col-sm-8">
-            <input class="form-control" type="text" id="email" name="email" placeholder="请填写电子邮箱" />
+            <input class="form-control" type="text" id="product" name="product" placeholder="请填写公司相关的产品" />
+        </div>
+    </div>
+    <div class="form-group">
+    <label class="col-sm-3 control-label" for="good_at">公司擅长：</label>
+    <div class="col-sm-8">
+        <input class="form-control" type="text" id="good_at" name="good_at" placeholder="请填写公司擅长" />
+    </div>
+</div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label" for="score">公司评分：</label>
+        <div class="col-sm-8">
+            <input class="form-control" type="text" id="score" name="score" placeholder="请填写评分" />
         </div>
     </div>
     
-    <div class="form-group">
+   <%-- <div class="form-group">
         <label class="col-sm-3 control-label" for="useable">是否可用：</label>
         <div class="col-sm-8">
             <div class="radio">
@@ -55,19 +64,20 @@
 				</label>
 			</div>
         </div>
-    </div>
+    </div>--%>
 </form>
+
 <script type="text/javascript">
 	submit = function(){
 		frmValidate();
-		var password = $("#password").val();
+		/*var password = $("#password").val();
 		var rePass = $("#rePass").val();
 		if(password != rePass){
 			modalErr("两次密码不一致");
 			return;
 		}
 		password = hex_md5(password);
-		var data = $("#submitForm").serialize() + "&password="+password;
-		ajaxRequest("admin/user/add", data);
+		var data = $("#submitForm").serialize() + "&password="+password;*/
+		ajaxRequest("admin/company/add", data);
 	}
 </script>

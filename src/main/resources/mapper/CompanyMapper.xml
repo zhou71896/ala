@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xe.demo.mapper.IFileMapper">
+<mapper namespace="com.xe.demo.mapper.CompanyMapper">
 	<resultMap id="BaseResultMap" type="com.xe.demo.model.CompanyEntity">
 		<id column="id" jdbcType="INTEGER" property="id" />
 		<result column="name" jdbcType="VARCHAR" property="name" />
-		<result column="type" jdbcType="INTEGER" property="type" />
+		<result column="type" jdbcType="TINYINT" property="type" />
 		<result column="address" jdbcType="VARCHAR" property="address" />
 		<result column="icon" jdbcType="VARCHAR" property="icon" />
 		<result column="introduce" jdbcType="VARCHAR" property="introduce" />
@@ -13,12 +13,28 @@
 		<result column="good_at" jdbcType="VARCHAR" property="good_at"/>
 		<result column="score" jdbcType="FLOAT" property="score"/>
 		<result column="status" jdbcType="INTEGER" property="status" />
-		<result column="update_date" jdbcType="VARCHAR" property="update_date" />
-		<result column="create_date" jdbcType="VARCHAR" property="create_date" />
+		<result column="update_date" jdbcType="TIMESTAMP" property="update_date" />
+		<result column="create_date" jdbcType="TIMESTAMP" property="create_date" />
 		<result column="user_id" jdbcType="INTEGER" property="user_id" />
 	</resultMap>
 
 	<insert id="addCompany" useGeneratedKeys="true" keyProperty="id">
-		insert into auth_user(username, password, roleid, addtime) values(#{username}, #{password}, #{roleid}, now())
+		insert into auth_user(name, type, address, icon,introduce,product_id,description,good_at,score,status,update_date,user_id)
+		 values(#{name}, #{type}, #{address},#{icon}, #{introduce},#{product_id},#{description},#{good_at},#{score},#{status},now(),#{user_id})
 	</insert>
+
+	<select id="queryList" resultMap="BaseResultMap">
+		select u.id,u.name,u.type,u.address,u.icon,u.introduce,u.product_id,u.description,u.good_at,u.score,u.status,DATE_FORMAT(u.update_date, '%Y-%m-%d %H:%i:%s'),DATE_FORMAT(u.create_date, '%Y-%m-%d %H:%i:%s'),u.user_id
+		from company u order  by u.create_date
+	</select>
+
+	<select id="queryByName" resultMap="BaseResultMap">
+	select u.id,u.name,u.type,u.address,u.icon,u.introduce,u.product_id,u.description,u.good_at,u.score,u.status,u.update_date,u.create_date,u.user_id
+	from company u where u.name = #{name}
+   </select>
+
+	<select id="queryListByType" resultMap="BaseResultMap">
+		select u.id,u.name,u.type,u.address,u.icon,u.introduce,u.product_id,u.description,u.good_at,u.score,u.status,u.update_date,u.create_date,u.user_id
+		from company u where u.name = #{type}
+	</select>
 </mapper>

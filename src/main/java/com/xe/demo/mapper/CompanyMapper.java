@@ -14,7 +14,8 @@ public interface CompanyMapper extends MyMapper<CompanyEntity>{
 
     CompanyEntity queryByName(@Param("name") String name);
 
-    List<CompanyEntity> queryList(@Param("user")CompanyEntity user);
+    List<CompanyEntity> queryListByType(@Param("type")String type);
 
+    List<CompanyEntity> queryList(@Param("company")CompanyEntity company);
 
 }
