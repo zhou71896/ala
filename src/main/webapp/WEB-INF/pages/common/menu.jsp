@@ -56,6 +56,9 @@
 					<li opCode="0401">
 						<a tabindex="-1" href="javascript:goPage('admin/company/mainPage')"><span class="mm-text">公司管理</span></a>
 					</li>
+					<li opCode="0402">
+						<a tabindex="-1" href="javascript:goPage('admin/company/mainTypePage')"><span class="mm-text">公司类型管理</span></a>
+					</li>
 				</ul>
 			</li>
 			<li class="mm-dropdown" opCode="05">

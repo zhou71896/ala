@@ -43,9 +43,9 @@
                 	if("admin" == data.username){
                 		return "禁止操作超级管理员";
                 	}else{
-	                    var editUrl = "admin/user/updatePage/" + content;
+	                    var editUrl = "admin/company/updatePage/" + content;
 	                    var resetPwd = "admin/user/updatePwdPage?id=" + content;
-	                    var delUrl = "admin/user/deleteByID/" + content;
+	                    var delUrl = "admin/company/deleteByID/" + content;
 	                    return "<a href='javascript:showModal(\"更新用户\", \""+editUrl+"\");' data-original-title='修改' class='btn btn-xs btn-warning add-tooltip'><i class='fa fa-pencil'>修改</i></a>"
 	                        + "&nbsp;<a href='javascript:showModal(\"重置密码\", \""+resetPwd+"\");' data-original-title='重置密码' class='btn btn-xs btn-success add-tooltip'><i class='fa fa-repeat'>重置密码</i></a>"
 	                        + "&nbsp;<a href='javascript:showCfm(\"确定删除该记录\", \""+delUrl+"\");'  data-original-title='删除' class='btn btn-xs btn-danger add-tooltip'><i class='fa fa-times'>删除</i></a>";

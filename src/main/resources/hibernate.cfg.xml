@@ -22,6 +22,9 @@
         <mapping class="com.xe.demo.model.CompanyEntity"/>
         <mapping class="com.xe.demo.model.TaskEntity"/>
         <mapping class="com.xe.demo.model.UserEntity"/>
+        <mapping class="com.xe.demo.model.CompanyProductEntity"/>
+        <mapping class="com.xe.demo.model.CompanyTypeEntity"/>
+        <mapping class="com.xe.demo.model.ResourceEntity"/>
         <!-- Drop and re-create the database schema on startup -->
         <!--
         <property name="hbm2ddl.auto">update</property>
