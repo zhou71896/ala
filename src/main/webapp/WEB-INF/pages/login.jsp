@@ -313,7 +313,7 @@
                 <div class="z-title">
                     <h1>
                         <img src="${ctx}/assets/images/login/log03.png">
-                        <span>权限管理系统</span>
+                        <span>微广后台管理系统</span>
                     </h1>
                     <p>©ALD</p>
                 </div>

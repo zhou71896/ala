@@ -64,7 +64,7 @@ public class UserService extends AbstratService<AuthUser> {
 		String result = null;
 		AuthUser $user = userMapper.queryByUsername(user.getUsername());
 		if (null != $user && $user.getId() != user.getId()) {
-			result = "用户名已存在";
+			result = "用户名不存在";
 		} else {
 			updateByID(user);
 		}

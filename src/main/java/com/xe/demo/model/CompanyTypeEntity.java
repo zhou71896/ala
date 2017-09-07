@@ -9,20 +9,23 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "company_type", schema = "spring_boot", catalog = "")
 public class CompanyTypeEntity {
-    private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String name;
     private Integer status;
     private String update_date;
     private String create_date;
-    private Long user_id;
+    private Integer user_id;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -68,11 +71,11 @@ public class CompanyTypeEntity {
 
     @Basic
     @Column(name = "user_id")
-    public Long getUser_id() {
+    public Integer getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(Long user_id) {
+    public void setUser_id(Integer user_id) {
         this.user_id = user_id;
     }
 

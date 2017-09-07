@@ -48,8 +48,9 @@ public class CompanyTypeService extends   AbstratService<CompanyTypeEntity> {
         String result = null;
         CompanyTypeEntity $companyTypeEntity =  companyTypeMapper.queryByName(companyTypeEntity.getName());
         if (null != $companyTypeEntity && $companyTypeEntity.getId() != $companyTypeEntity.getId()) {
-            result = "公司类型已经存在";
+            result = "公司类型不存在";
         } else {
+            companyTypeEntity.setUpdate_date(DateUtil.getCurDateTime());
             updateByID(companyTypeEntity);
         }
         return AppUtil.returnObj(result);

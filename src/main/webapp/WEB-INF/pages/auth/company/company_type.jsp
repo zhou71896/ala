@@ -20,16 +20,23 @@
     $(function (){
         $("#openAppGrid").sgrid({
             columns:[
-                {field:"id",text:"公司类型编号", sortColumn:"id"},
-                {field:"name", text:"类型名称"},
-                {field:"status", text:"状态"},
-                {field:"update_date", text:"修改时间"},
-                {field:"create_date", text:"创建时间"},
-                {field:"user_id", text:"创建者"},
+                {field:"id",text:"公司类型编号",style:"text-align:center", sortColumn:"id"},
+                {field:"name", text:"类型名称",style:"text-align:center"},
+                {field:"status", text:"状态",style:"text-align:center",formatter:function(index,content,data){
+                    var s=content;
+                    if(s==1){
+                        return "激活";
+                    }else{
+                        return "禁用";
+                    }
+
+                }},
+                {field:"update_date", text:"修改时间",style:"text-align:center"},
+                {field:"create_date", text:"创建时间",style:"text-align:center"},
                 {field:"id", text:"操作",width:80, style:"text-align:center", formatter:function(index, content, data){
-	                    var editUrl = "admin/user/updatePage/" + content.toString();
-	                    var delUrl = "admin/company/deleteTypeByID/" + content.toString();
-	                    return "<a href='javascript:showModal(\"更新用户\", \""+editUrl+"\");' data-original-title='修改' class='btn btn-xs btn-warning add-tooltip'><i class='fa fa-pencil'>修改</i></a>"
+	                    var editUrl = "admin/company/updateTypePage/" + content;
+	                    var delUrl = "admin/company/deleteTypeByID/" + content;
+	                    return "<a href='javascript:showModal(\"修改用户\", \""+editUrl+"\");' data-original-title='修改' class='btn btn-xs btn-warning add-tooltip'><i class='fa fa-pencil'>修改</i></a>"
 	                        + "&nbsp;<a href='javascript:showCfm(\"确定删除该记录\", \""+delUrl+"\");'  data-original-title='删除' class='btn btn-xs btn-danger add-tooltip'><i class='fa fa-times'>删除</i></a>";
                 	}
                 }

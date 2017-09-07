@@ -17,7 +17,9 @@
 
 	<select id="queryList" resultMap="BaseResultMap">
 		select u.id,u.status,u.name,u.update_date,u.create_date,u.user_id
-		from company_type u order  by u.create_date
+		from company_type u
+		<if test="null != companytype.name"> where locate(#{companytype.name}, u.name) > 0</if>
+		order  by u.create_date
 	</select>
 
 	<select id="queryByName" resultMap="BaseResultMap">

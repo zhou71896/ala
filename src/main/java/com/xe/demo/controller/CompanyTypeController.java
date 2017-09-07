@@ -49,10 +49,11 @@ public class CompanyTypeController extends  BaseController {
     }
 
     @Authority(opCode = "040202", opName = "修改公司类型页面")
-    @RequestMapping("updatePasswdPage")
-    public String updatePasswdPage(Map<String, Object> map, int id) {
-        map.put("id", id);
-        return "auth/user/update_passwd";
+    @RequestMapping("updateTypePage/{id}")
+    public String updateTypePage(@PathVariable("id") int id,Map<String, Object> map) {
+        CompanyTypeEntity companyTypeEntity=companyTypeService.queryByID(id);
+        map.put("companyTypeEntity",companyTypeEntity);
+        return "auth/company/update_type";
     }
 
     @ControllerLog("添加公司类型")
