@@ -1,6 +1,5 @@
 package com.xe.demo.mapper;
 
-import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion;
 import com.xe.demo.common.dao.MyMapper;
 import com.xe.demo.model.AuthUser;
 import com.xe.demo.model.UserEntity;

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xe.demo.mapper.AdMapper">
+	<resultMap id="BaseResultMap" type="com.xe.demo.model.AdEntity">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="type" jdbcType="INTEGER" property="type" />
+		<result column="icon" jdbcType="VARCHAR" property="icon" />
+		<result column="content" jdbcType="VARCHAR" property="content" />
+		<result column="status" jdbcType="INTEGER" property="status" />
+		<result column="update_date" jdbcType="TIMESTAMP" property="update_date"/>
+		<result column="create_date" jdbcType="TIMESTAMP" property="create_date"/>
+		<result column="user_id" jdbcType="INTEGER" property="user_id" />
+	</resultMap>
+
+	<insert id="addAd" useGeneratedKeys="true" keyProperty="id">
+		insert into user(name, type , icon, content,status,update_date,create_date,user_id)
+		 values(#{name }, #{type}, #{icon},#{content}, #{status},#{update_date},#{create_date},#{user_id})
+	</insert>
+
+	<select id="queryList" resultMap="BaseResultMap">
+		select u.id,u.name,u.type,u.icon,u.content,u.status,u.update_date,u.create_date,u.user_id
+		from ad u order  by u.create_date
+	</select>
+
+	<select id="queryByName" resultMap="BaseResultMap">
+		select u.id,u.name,u.type,u.icon,u.content,u.status,u.update_date,u.create_date,u.user_id
+	    from ad u where u.name = #{name}
+   </select>
+</mapper>

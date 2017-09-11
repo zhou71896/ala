@@ -1,7 +1,6 @@
 package com.xe.demo.model;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 
 /**
  * Created by Rock on 2017/8/31.
@@ -9,15 +8,17 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "ad", schema = "spring_boot", catalog = "")
 public class AdEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
     private Byte type;
     private String icon;
     private String content;
     private Integer status;
-    private Timestamp updateDate;
-    private Timestamp createDate;
-    private Long userId;
+    private String update_date;
+    private String create_date;
+    private Long user_id;
 
     @Id
     @Column(name = "id")
@@ -81,32 +82,32 @@ public class AdEntity {
 
     @Basic
     @Column(name = "update_date")
-    public Timestamp getUpdateDate() {
-        return updateDate;
+    public String getUpdateDate() {
+        return update_date;
     }
 
-    public void setUpdateDate(Timestamp updateDate) {
-        this.updateDate = updateDate;
+    public void setUpdateDate(String update_date) {
+        this.update_date = update_date;
     }
 
     @Basic
     @Column(name = "create_date")
-    public Timestamp getCreateDate() {
-        return createDate;
+    public String getCreate_date() {
+        return create_date;
     }
 
-    public void setCreateDate(Timestamp createDate) {
-        this.createDate = createDate;
+    public void setCreate_date(String create_date) {
+        this.create_date = create_date;
     }
 
     @Basic
     @Column(name = "user_id")
-    public Long getUserId() {
-        return userId;
+    public Long getUser_id() {
+        return user_id;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setUser_id(Long user_id) {
+        this.user_id = user_id;
     }
 
     @Override
@@ -122,9 +123,9 @@ public class AdEntity {
         if (icon != null ? !icon.equals(adEntity.icon) : adEntity.icon != null) return false;
         if (content != null ? !content.equals(adEntity.content) : adEntity.content != null) return false;
         if (status != null ? !status.equals(adEntity.status) : adEntity.status != null) return false;
-        if (updateDate != null ? !updateDate.equals(adEntity.updateDate) : adEntity.updateDate != null) return false;
-        if (createDate != null ? !createDate.equals(adEntity.createDate) : adEntity.createDate != null) return false;
-        if (userId != null ? !userId.equals(adEntity.userId) : adEntity.userId != null) return false;
+        if (update_date != null ? !update_date.equals(adEntity.update_date) : adEntity.update_date != null) return false;
+        if (create_date != null ? !create_date.equals(adEntity.create_date) : adEntity.create_date != null) return false;
+        if (user_id != null ? !user_id.equals(adEntity.user_id) : adEntity.user_id != null) return false;
 
         return true;
     }
@@ -137,9 +138,9 @@ public class AdEntity {
         result = 31 * result + (icon != null ? icon.hashCode() : 0);
         result = 31 * result + (content != null ? content.hashCode() : 0);
         result = 31 * result + (status != null ? status.hashCode() : 0);
-        result = 31 * result + (updateDate != null ? updateDate.hashCode() : 0);
-        result = 31 * result + (createDate != null ? createDate.hashCode() : 0);
-        result = 31 * result + (userId != null ? userId.hashCode() : 0);
+        result = 31 * result + (update_date != null ? update_date.hashCode() : 0);
+        result = 31 * result + (create_date != null ? create_date.hashCode() : 0);
+        result = 31 * result + (user_id != null ? user_id.hashCode() : 0);
         return result;
     }
 }

@@ -31,7 +31,7 @@
 					</li>
 		        </ul>
 		    </li>
-		<%--    <li class="mm-dropdown" opCode="02">
+		    <li class="mm-dropdown" opCode="02">
 		        <a href="#"><i class="menu-icon fa fa-barcode"></i><span class="mm-text">整合技术</span></a>
 		        <ul>
 		            <li opCode="0201">
@@ -41,7 +41,7 @@
 		                <a tabindex="-1" href="javascript:goPage('admin/tech/articlePage')"><span class="mm-text">文章管理</span></a>
 		            </li>
 		        </ul>
-		    </li>--%>
+		    </li>
 		    <li class="mm-dropdown" opCode="03">
 		        <a href="#"><i class="menu-icon fa fa-user"></i><span class="mm-text">用户管理</span></a>
 		        <ul>
