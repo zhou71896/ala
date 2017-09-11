@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xe.demo.mapper.CustomerMapper">
+	<resultMap id="BaseResultMap" type="com.xe.demo.model.UserEntity">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="nick_name" jdbcType="VARCHAR" property="nick_name" />
+		<result column="password" jdbcType="VARCHAR" property="password" />
+		<result column="mobile" jdbcType="VARCHAR" property="mobile" />
+		<result column="email" jdbcType="VARCHAR" property="email" />
+		<result column="gender" jdbcType="INTEGER" property="gender" />
+		<result column="active_degree" jdbcType="INTEGER" property="active_degree"/>
+		<result column="birthday" jdbcType="TIMESTAMP" property="birthday"/>
+		<result column="signature" jdbcType="VARCHAR" property="signature"/>
+		<result column="register_time" jdbcType="TIMESTAMP" property="register_time"/>
+		<result column="province" jdbcType="VARCHAR" property="province" />
+		<result column="city" jdbcType="VARCHAR" property="city" />
+		<result column="head_img_url" jdbcType="VARCHAR" property="head_img_url" />
+		<result column="fk_resource_id" jdbcType="VARCHAR" property="fk_resource_id" />
+		<result column="introduction" jdbcType="VARCHAR" property="introduction" />
+		<result column="status" jdbcType="INTEGER" property="status" />
+	</resultMap>
+
+	<insert id="addUser" useGeneratedKeys="true" keyProperty="id">
+		insert into user(nick_name, password, mobile, email,gender,active_degree,registe_time,status)
+		 values(#{nick_name}, #{password}, #{mobile},#{email}, #{gender},#{register_time},#{status})
+	</insert>
+
+	<select id="queryList" resultMap="BaseResultMap">
+		select u.id,u.nick_name,u.password,u.mobile,u.email,u.gender,u.active_degree,u.registe_time,u.status
+		from user u order  by u.registe_time
+	</select>
+
+	<select id="queryByUserName" resultMap="BaseResultMap">
+		select u.id,u.nick_name,u.password,u.mobile,u.email,u.gender,u.active_degree,u.registe_time,u.status
+	    from user u where u.nick_name = #{nick_name}
+   </select>
+</mapper>

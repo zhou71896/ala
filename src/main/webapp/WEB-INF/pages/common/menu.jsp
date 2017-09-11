@@ -48,6 +48,9 @@
 		            <li opCode="0301">
 		                <a tabindex="-1" href="javascript:goPage('admin/log/mainPage')"><span class="mm-text">用户日志</span></a>
 		            </li>
+					<li opCode="0302">
+						<a tabindex="-1" href="javascript:goPage('user/customerPage')"><span class="mm-text">顾客管理</span></a>
+					</li>
 		        </ul>
 		    </li>
 			<li class="mm-dropdown" opCode="04">

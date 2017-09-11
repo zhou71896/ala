@@ -2,7 +2,8 @@
 SQLyog Ultimate v11.25 (64 bit)
 MySQL - 5.6.24 : Database - spring_boot
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
@@ -220,8 +221,8 @@ CREATE TABLE `task` (
 DROP TABLE IF EXISTS `user`;
 
 CREATE TABLE `user` (
-  `id` bigint(50) DEFAULT NULL,
-  `nickName` varchar(60) COLLATE utf8mb4_bin DEFAULT NULL,
+  `id` bigint(50) NOT NULL AUTO_INCREMENT COMMENT'用户编号',
+  `nick_name` varchar(60) COLLATE utf8mb4_bin DEFAULT NULL,
   `password` varchar(150) COLLATE utf8mb4_bin DEFAULT NULL,
   `mobile` varchar(60) COLLATE utf8mb4_bin DEFAULT NULL,
   `email` varchar(765) COLLATE utf8mb4_bin DEFAULT NULL,
@@ -235,7 +236,8 @@ CREATE TABLE `user` (
   `head_img_url` varchar(765) COLLATE utf8mb4_bin DEFAULT NULL,
   `fk_resource_id` varchar(765) COLLATE utf8mb4_bin DEFAULT NULL,
   `introduction` text COLLATE utf8mb4_bin,
-  `status` int(10) DEFAULT NULL
+  `status` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 /*Data for the table `user` */

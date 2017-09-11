@@ -1,10 +1,6 @@
 package com.xe.demo.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import java.sql.Timestamp;
+import javax.persistence.*;
 
 /**
  * Created by Rock on 2017/8/31.
@@ -12,20 +8,22 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "user", schema = "spring_boot", catalog = "")
 public class UserEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nickName;
+    private String nick_name;
     private String password;
     private String mobile;
     private String email;
     private Integer gender;
     private Long activeDegree;
-    private Timestamp birthday;
+    private String birthday;
     private String signature;
-    private Timestamp registeTime;
+    private String registe_time;
     private String province;
     private String city;
-    private String headImgUrl;
-    private String fkResourceId;
+    private String head_img_url;
+    private String fk_resource_id;
     private String introduction;
     private Integer status;
 
@@ -40,13 +38,13 @@ public class UserEntity {
     }
 
     @Basic
-    @Column(name = "nickName")
-    public String getNickName() {
-        return nickName;
+    @Column(name = "nick_name")
+    public String getNick_name() {
+        return nick_name;
     }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
+    public void setNick_name(String nick_name) {
+        this.nick_name = nick_name;
     }
 
     @Basic
@@ -101,11 +99,11 @@ public class UserEntity {
 
     @Basic
     @Column(name = "birthday")
-    public Timestamp getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Timestamp birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 
@@ -121,12 +119,12 @@ public class UserEntity {
 
     @Basic
     @Column(name = "registe_time")
-    public Timestamp getRegisteTime() {
-        return registeTime;
+    public String getRegiste_time() {
+        return registe_time;
     }
 
-    public void setRegisteTime(Timestamp registeTime) {
-        this.registeTime = registeTime;
+    public void setRegiste_time(String registe_time) {
+        this.registe_time = registe_time;
     }
 
     @Basic
@@ -151,22 +149,22 @@ public class UserEntity {
 
     @Basic
     @Column(name = "head_img_url")
-    public String getHeadImgUrl() {
-        return headImgUrl;
+    public String getHead_img_url() {
+        return head_img_url;
     }
 
-    public void setHeadImgUrl(String headImgUrl) {
-        this.headImgUrl = headImgUrl;
+    public void setHead_img_url(String head_img_url) {
+        this.head_img_url = head_img_url;
     }
 
     @Basic
     @Column(name = "fk_resource_id")
-    public String getFkResourceId() {
-        return fkResourceId;
+    public String getFk_resource_id() {
+        return fk_resource_id;
     }
 
-    public void setFkResourceId(String fkResourceId) {
-        this.fkResourceId = fkResourceId;
+    public void setFk_resource_id(String fk_resource_id) {
+        this.fk_resource_id = fk_resource_id;
     }
 
     @Basic
@@ -197,7 +195,7 @@ public class UserEntity {
         UserEntity that = (UserEntity) o;
 
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
-        if (nickName != null ? !nickName.equals(that.nickName) : that.nickName != null) return false;
+        if (nick_name != null ? !nick_name.equals(that.nick_name) : that.nick_name != null) return false;
         if (password != null ? !password.equals(that.password) : that.password != null) return false;
         if (mobile != null ? !mobile.equals(that.mobile) : that.mobile != null) return false;
         if (email != null ? !email.equals(that.email) : that.email != null) return false;
@@ -205,11 +203,11 @@ public class UserEntity {
         if (activeDegree != null ? !activeDegree.equals(that.activeDegree) : that.activeDegree != null) return false;
         if (birthday != null ? !birthday.equals(that.birthday) : that.birthday != null) return false;
         if (signature != null ? !signature.equals(that.signature) : that.signature != null) return false;
-        if (registeTime != null ? !registeTime.equals(that.registeTime) : that.registeTime != null) return false;
+        if (registe_time != null ? !registe_time.equals(that.registe_time) : that.registe_time != null) return false;
         if (province != null ? !province.equals(that.province) : that.province != null) return false;
         if (city != null ? !city.equals(that.city) : that.city != null) return false;
-        if (headImgUrl != null ? !headImgUrl.equals(that.headImgUrl) : that.headImgUrl != null) return false;
-        if (fkResourceId != null ? !fkResourceId.equals(that.fkResourceId) : that.fkResourceId != null) return false;
+        if (head_img_url != null ? !head_img_url.equals(that.head_img_url) : that.head_img_url != null) return false;
+        if (fk_resource_id != null ? !fk_resource_id.equals(that.fk_resource_id) : that.fk_resource_id != null) return false;
         if (introduction != null ? !introduction.equals(that.introduction) : that.introduction != null) return false;
         if (status != null ? !status.equals(that.status) : that.status != null) return false;
 
@@ -219,7 +217,7 @@ public class UserEntity {
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (nickName != null ? nickName.hashCode() : 0);
+        result = 31 * result + (nick_name != null ? nick_name.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
         result = 31 * result + (mobile != null ? mobile.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
@@ -227,11 +225,11 @@ public class UserEntity {
         result = 31 * result + (activeDegree != null ? activeDegree.hashCode() : 0);
         result = 31 * result + (birthday != null ? birthday.hashCode() : 0);
         result = 31 * result + (signature != null ? signature.hashCode() : 0);
-        result = 31 * result + (registeTime != null ? registeTime.hashCode() : 0);
+        result = 31 * result + (registe_time != null ? registe_time.hashCode() : 0);
         result = 31 * result + (province != null ? province.hashCode() : 0);
         result = 31 * result + (city != null ? city.hashCode() : 0);
-        result = 31 * result + (headImgUrl != null ? headImgUrl.hashCode() : 0);
-        result = 31 * result + (fkResourceId != null ? fkResourceId.hashCode() : 0);
+        result = 31 * result + (head_img_url != null ? head_img_url.hashCode() : 0);
+        result = 31 * result + (fk_resource_id != null ? fk_resource_id.hashCode() : 0);
         result = 31 * result + (introduction != null ? introduction.hashCode() : 0);
         result = 31 * result + (status != null ? status.hashCode() : 0);
         return result;
